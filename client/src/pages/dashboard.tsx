@@ -3,8 +3,9 @@ import { PulseVisualizer } from "@/components/pulse-visualizer";
 import { StrategyList } from "@/components/strategy-list";
 import { CoordinateMatrix } from "@/components/coordinate-matrix";
 import { GlitchText } from "@/components/glitch-text";
-import { Terminal } from "lucide-react";
+import { Terminal, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Dashboard() {
   return (
@@ -22,7 +23,7 @@ export default function Dashboard() {
             13-Dimensional Hypergraph Pulse Evolution Engine
           </p>
         </div>
-        <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+        <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end flex-wrap">
           <div className="text-right hidden sm:block">
              <p className="text-xs font-mono text-muted-foreground">SYSTEM STATUS</p>
              <p className="text-sm font-bold text-green-400 flex items-center justify-end gap-2">
@@ -30,9 +31,16 @@ export default function Dashboard() {
                OPERATIONAL
              </p>
           </div>
-          <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 font-mono text-xs sm:text-sm">
-            <Terminal className="mr-2 h-4 w-4" /> EXECUTE PULSE
-          </Button>
+          <div className="flex gap-2">
+            <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 font-mono text-xs sm:text-sm">
+              <Terminal className="mr-2 h-4 w-4" /> EXECUTE PULSE
+            </Button>
+            <Link href="/analysis">
+              <Button className="bg-secondary/20 border border-secondary/50 text-secondary hover:bg-secondary/30 font-mono text-xs sm:text-sm">
+                <BarChart3 className="mr-2 h-4 w-4" /> ANALYSIS
+              </Button>
+            </Link>
+          </div>
         </div>
       </header>
 
