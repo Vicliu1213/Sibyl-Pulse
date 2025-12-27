@@ -3,6 +3,7 @@ import { PulseVisualizer } from "@/components/pulse-visualizer";
 import { StrategyList } from "@/components/strategy-list";
 import { CoordinateMatrix } from "@/components/coordinate-matrix";
 import { GlitchText } from "@/components/glitch-text";
+import { RestartButton } from "@/components/restart-button";
 import { Terminal, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -31,7 +32,7 @@ export default function Dashboard() {
                OPERATIONAL
              </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 font-mono text-xs sm:text-sm">
               <Terminal className="mr-2 h-4 w-4" /> EXECUTE PULSE
             </Button>
@@ -40,6 +41,7 @@ export default function Dashboard() {
                 <BarChart3 className="mr-2 h-4 w-4" /> ANALYSIS
               </Button>
             </Link>
+            <RestartButton />
           </div>
         </div>
       </header>
